@@ -1,0 +1,143 @@
+body {
+	background-color: skyblue;
+	margin: 0;
+	padding: 0;
+}
+.main-container {
+	padding: 15px;
+	position: relative;
+}
+.head-container {
+	background-color: orange;
+	display: block;
+	left: 0;
+	padding: 25px;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	z-index: 95;
+	width: 100%;
+}
+.add-new-post {
+	background-color: red;
+	border: none;
+	box-shadow: 1px 1px 2px grey;
+	color: white;
+	font-size: 25px;
+	padding: 5px 10px;
+	transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	-webkit-transition: all .2s; 
+}
+.add-new-post:hover {
+	background-color: lightgreen;
+	box-shadow: 1px 1px 10px grey;
+}
+.post-container {
+	width: 100%;
+	margin: 150px auto 50px;
+	max-width: 900px;
+}
+.post-block {
+	background-color: white;
+	border-radius: 20px;
+	margin: 20px auto;
+	padding: 20px;
+}
+.post-block > iframe {
+	width: 100%;
+	height: 300px;
+}
+.pagination {
+	display: block;
+	text-align: center;
+}
+.pagination > ul {
+	list-style: none;
+}
+.pagination > ul > li {
+	background-color: white;
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 5px;
+	transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	-webkit-transition: all .2s; 
+	width: 25px;
+}
+.selected-page {
+	background-color: yellow; 
+}
+.pagination > ul > li:hover {
+	background-color: lightgreen;
+	box-shadow: 1px 1px 10px grey;	
+}
+.modal-container {
+	background-color: rgba(0, 0, 0, .75);
+	height: 100%;
+	left: 0;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}
+.form-block {
+	background-color: white;
+	border-radius: 15px;
+	display: block;
+	max-width: 500px;
+	padding: 70px 25px 25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	width: 90%;
+}
+.form-block > * > *{
+	display: block;
+	margin: 10px 0;
+}
+.form-block > * > label{
+	font-size: 25px;
+	font-style: italic;
+}
+.form-block > * > input[type="text"] {
+	width: 100%;
+}
+.form-block > * > textarea {
+	width: 100%;
+	height: 100px;
+	overflow: auto;
+	resize: none;
+}
+.form-block > * > p {
+	color: red;
+	font-style: italic;
+}
+.form-block > * > * > span {
+	display: inline-block;
+	margin-left: 10px;
+	color: red;
+	font-style: italic;
+}
+.modal-close-button {
+	position: absolute;
+	display: block;
+	background-color: red;
+	color: white;
+	padding: 10px 15px;
+	right: 25px;
+	top: 25px;
+	cursor: pointer;
+}

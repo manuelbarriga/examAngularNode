@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="blogPostApp">
+<head>
+	<title>New Websites</title>
+	<link rel="stylesheet" type="text/css" href="assets/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="scripts/blogPostApp.js"></script>
+</head>
+<body>
+	<div class="main-container" ng-controller="blogPostController as blogs">
+		<div class="modal-container" id="modalContainer" ng-if="blogs.toggleModal">
+			<div class="form-block">
+				<span class="modal-close-button" ng-click="blogs.toggleModal = false">X</span>
+				<form id="submitPostForm" method="POST">
+					<label for="title">Post Title<span>*</span></label>
+					<input id="postTitle" type="text" name="title" placeholder="Enter Title Here" />
+					<p ng-if="blogs.emptyTitle">Title must not be empty.</p>
+					<label for="body">Post Body<span>*</span></label>
+					<textarea id="postBody" name="body" placeholder="Tell something about it..."></textarea>
+					<p ng-if="blogs.emptyBody">Post Body must not be empty.</p>
+					<label for="category">Category</label>
+					<select id="postCategory" name="category">
+						<option value="Lifestyle">Lifestyle</option>
+						<option value="Travel">Travel</option>
+						<option value="Video">Video</option>
+					</select>
+					<label for="title">URL</label>
+					<input id="postURL" type="text" name="url" placeholder="Enter URL Here" />
+					<button ng-click="blogs.submitPost()">Submit</button>
+				</form>
+			</div>
+		</div>
+		<div class="head-container">
+			<button class="add-new-post" id="addNewButton" ng-click="blogs.toggleModal = true">Submit New Post</button>
+		</div>
+		<div class="post-container" ng-init="blogs.getList()">
+			<div class="post-block" ng-repeat="item in blogs.list">
+				<h1>{{item.title}}</h1>
+				<p><em>Category: {{item.category}}</em></p>
+				<iframe ng-if="item.url" ng-src="{{item.url}}"></iframe>
+				<p>{{item.body}}</p>
+			</div>
+		</div>
+		<div class="pagination" ng-init="blogs.displayPagination()">
+			<ul>
+				<li ng-click="blogs.selectPage($event)" class="pageNumber" ng-repeat="number in blogs.page">{{number}}</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
