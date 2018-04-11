@@ -1,3 +1,6 @@
 Instruction how to setup:
 1. After you import or setup the database (db.sql), go to the project folder and run the command 'npm install' to install the dependencies.
 2. After the dependencies are installed, run the command 'node app' to run the server. You can go to the main page with the port 3000 i.e. 'http://localhost:3000'. 
+
+****NOTE****
+- You can change the database credentials (username, password, host) in /appmodules/dataretriver.js file
